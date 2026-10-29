@@ -362,7 +362,7 @@ html:not(.js) [data-loop-toggle] { display: none; }
   [data-loop-toggle] { display: none; }
 }
 
-/* Activity panel: a status display, dark in both themes like the Telegram screen; green in the simple
+/* Activity panel: a status display, dark in both themes like the Telegram screen; orange in the simple
    view, violet in the technical one (colours in tokens.css) */
 .hud { --hud-color: var(--hud-simple); --hud-bg: color-mix(in oklch, var(--hud-color) 6%, oklch(12% 0 0)); --hud-dim: color-mix(in oklch, var(--hud-color) 16%, transparent); --hud-red: var(--hud-alarm);
   --hud-fill: color-mix(in oklch, var(--hud-bg) 35%, transparent); /* see-through, so the page shows behind it in light mode */

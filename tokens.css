@@ -29,8 +29,8 @@
   --radius-card: 10px; --radius-pill: 999px; --rule-hair: 1px;
   --tracking-display: -0.03em; --display-weight: 600;
   /* BENCH-OPS panel: one colour per view, the same in both themes */
-  --hud-simple: oklch(82% 0.2 145); --hud-tech: oklch(72% 0.19 292);
-  --hud-hazard: oklch(80% 0.16 75); --hud-alarm: oklch(62% 0.22 27);
+  --hud-simple: oklch(67% 0.22 37.6); /* PwC orange #FD5108 */ --hud-tech: oklch(72% 0.19 292);
+  --hud-hazard: oklch(67% 0.22 37.6); --hud-alarm: oklch(62% 0.22 27);
   /* architecture hologram, technical view only */
   --holo: oklch(82% 0.12 225);
 }
