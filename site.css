@@ -362,8 +362,8 @@ html:not(.js) [data-loop-toggle] { display: none; }
   [data-loop-toggle] { display: none; }
 }
 
-/* Activity panel: a status display, dark in both themes like the Telegram screen; orange in the simple
-   view, violet in the technical one (colours in tokens.css) */
+/* Activity panel: a status display, dark in both themes like the Telegram screen; orange in both
+   views (colour in tokens.css) */
 .hud { --hud-color: var(--hud-simple); --hud-bg: color-mix(in oklch, var(--hud-color) 6%, oklch(12% 0 0)); --hud-dim: color-mix(in oklch, var(--hud-color) 16%, transparent); --hud-red: var(--hud-alarm);
   --hud-fill: color-mix(in oklch, var(--hud-bg) 35%, transparent); /* see-through, so the page shows behind it in light mode */
   position: relative; overflow: hidden; background: var(--hud-fill); color: var(--hud-color); border: 2px solid var(--hud-color); border-radius: 2px; font-family: var(--font-outlier);
@@ -387,7 +387,6 @@ html:not(.js) [data-loop-toggle] { display: none; }
 .seg__label { font-size: var(--text-xs); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; }
 @media (max-width: 900px) { .hud__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .hud__grid { grid-template-columns: 1fr; } }
-[data-mode="tech"] .hud { --hud-color: var(--hud-tech); }
 @keyframes hud-blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .hud.is-running .hud__live { animation: none; } }
 
