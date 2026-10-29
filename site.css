@@ -365,7 +365,8 @@ html:not(.js) [data-loop-toggle] { display: none; }
 /* Activity panel: a status display, dark in both themes like the Telegram screen; green in the simple
    view, violet in the technical one (colours in tokens.css) */
 .hud { --hud-color: var(--hud-simple); --hud-bg: color-mix(in oklch, var(--hud-color) 6%, oklch(12% 0 0)); --hud-dim: color-mix(in oklch, var(--hud-color) 16%, transparent); --hud-red: var(--hud-alarm);
-  position: relative; overflow: hidden; background: var(--hud-bg); color: var(--hud-color); border: 2px solid var(--hud-color); border-radius: 2px; font-family: var(--font-outlier);
+  --hud-fill: color-mix(in oklch, var(--hud-bg) 35%, transparent); /* see-through, so the page shows behind it in light mode */
+  position: relative; overflow: hidden; background: var(--hud-fill); color: var(--hud-color); border: 2px solid var(--hud-color); border-radius: 2px; font-family: var(--font-outlier);
   background-image: repeating-linear-gradient(0deg, transparent 0 3px, oklch(0% 0 0 / 0.25) 3px 4px), repeating-linear-gradient(-45deg, var(--hud-hazard) 0 10px, oklch(12% 0 0) 10px 20px);
   background-size: auto, 100% 12px; background-repeat: repeat, no-repeat; }
 .hud__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-md); padding: calc(var(--space-sm) + 10px) var(--space-lg) var(--space-sm); border-bottom: 1px solid var(--hud-color); font-size: var(--text-xs); letter-spacing: 0.12em; text-transform: uppercase; }
@@ -373,8 +374,8 @@ html:not(.js) [data-loop-toggle] { display: none; }
 .hud__live { margin-left: auto; color: var(--hud-red); }
 .hud__live::before { content: "\25CF  "; }
 .hud.is-running .hud__live { animation: hud-blink 1s steps(1) infinite; }
-.hud__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 0; padding: 0; list-style: none; background: var(--hud-dim); }
-.hud__grid li { display: flex; flex-direction: column; gap: var(--space-2xs); padding: var(--space-lg); background: var(--hud-bg); }
+.hud__grid { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; padding: 0; list-style: none; }
+.hud__grid li { display: flex; flex-direction: column; gap: var(--space-2xs); padding: var(--space-lg); box-shadow: 1px 1px 0 var(--hud-dim); }
 @font-face { font-family: "DSEG7"; src: url("fonts/DSEG7Classic-BoldItalic.woff2") format("woff2"); font-display: swap; } /* OFL, fonts/DSEG-LICENSE.txt */
 .seg { display: inline-grid; justify-items: end; font: 700 clamp(1.75rem, 2.5vw + 1rem, 2.75rem)/1 "DSEG7", var(--font-outlier); letter-spacing: 0.02em; text-shadow: 0 0 6px color-mix(in oklch, var(--hud-color) 70%, transparent), 0 0 18px color-mix(in oklch, var(--hud-color) 45%, transparent); }
 .seg > *, .seg::before { grid-area: 1 / 1; }
