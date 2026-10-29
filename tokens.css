@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(72% 0.15 27); --color-success: oklch(76% 0.13 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  /* light: the default without a system preference */
+  --color-paper: oklch(98.5% 0.004 285); --color-paper-2: oklch(96% 0.006 285); --color-paper-3: oklch(93% 0.008 285);
+  --color-ink: oklch(19% 0.02 285); --color-ink-2: oklch(32% 0.02 285); --color-muted: oklch(48% 0.02 285);
+  --color-rule: oklch(89% 0.008 285); --color-rule-2: oklch(80% 0.012 285); --rule-blueprint: oklch(19% 0.02 285 / 0.05);
+  /* code decides: NVIDIA green #76B900, darkened to read on light paper */
+  --color-accent: oklch(52% 0.15 132); --color-accent-ink: oklch(98.5% 0.004 285);
+  /* the model proposes: OPIT violet #6734EA */
+  --color-model: oklch(48% 0.22 288); --color-block: oklch(54% 0.2 25); --color-warn: oklch(52% 0.13 62);
+  --color-live: var(--color-accent); --color-focus: oklch(48% 0.22 288);
+  /* people in the chat: their own colours, outside the model and code roles */
+  --user-pm: oklch(70% 0.13 45); --user-ig: oklch(72% 0.12 200); --user-ca: oklch(74% 0.12 330); --user-ch: oklch(76% 0.13 95); --user-ink: oklch(19% 0.02 285);
+  /* the Telegram screen keeps its own dark look in both themes */
+  --tg-bg: oklch(22% 0.02 250); --tg-head: oklch(27% 0.02 250); --tg-bot: oklch(31% 0.02 250); --tg-ink: oklch(96% 0.006 250); --tg-meta: oklch(74% 0.02 250); --tg-me: oklch(52% 0.2 290); --tg-warn: oklch(85% 0.16 85);
+  /* flag colours, used only in the language button */
+  --flag-it-green: oklch(56% 0.15 152); --flag-it-red: oklch(55% 0.2 22); --flag-white: oklch(99% 0.005 285); --flag-uk-blue: oklch(30% 0.13 265); --flag-uk-red: oklch(51% 0.2 25);
+  --font-display: "Figtree", ui-sans-serif, system-ui, sans-serif; --font-body: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Geist Mono", ui-monospace, monospace;
+  --radius-card: 10px; --radius-pill: 999px; --rule-hair: 1px;
+  --tracking-display: -0.03em; --display-weight: 600;
+  /* BENCH-OPS panel: one colour per view, the same in both themes */
+  --hud-simple: oklch(82% 0.2 145); --hud-tech: oklch(72% 0.19 292);
+  --hud-hazard: oklch(80% 0.16 75); --hud-alarm: oklch(62% 0.22 27);
+  /* architecture hologram, technical view only */
+  --holo: oklch(82% 0.12 225);
+}
+
+/* dark: graphite with a violet cast, so the OPIT violet sits in it and the green stands out */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --color-paper: oklch(17% 0.016 285); --color-paper-2: oklch(20.5% 0.018 285); --color-paper-3: oklch(24.5% 0.02 285);
+  --color-ink: oklch(96% 0.008 285); --color-ink-2: oklch(84% 0.014 285); --color-muted: oklch(70% 0.02 285);
+  --color-rule: oklch(30% 0.02 285); --color-rule-2: oklch(40% 0.025 285); --rule-blueprint: oklch(96% 0.008 285 / 0.05);
+  --color-accent: oklch(72% 0.19 131.6); --color-accent-ink: oklch(17% 0.016 285);
+  --color-model: oklch(68% 0.18 290); --color-block: oklch(70% 0.17 25); --color-warn: oklch(80% 0.15 75); --color-focus: oklch(72% 0.19 131.6);
+} }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: oklch(17% 0.016 285); --color-paper-2: oklch(20.5% 0.018 285); --color-paper-3: oklch(24.5% 0.02 285);
+  --color-ink: oklch(96% 0.008 285); --color-ink-2: oklch(84% 0.014 285); --color-muted: oklch(70% 0.02 285);
+  --color-rule: oklch(30% 0.02 285); --color-rule-2: oklch(40% 0.025 285); --rule-blueprint: oklch(96% 0.008 285 / 0.05);
+  --color-accent: oklch(72% 0.19 131.6); --color-accent-ink: oklch(17% 0.016 285);
+  --color-model: oklch(68% 0.18 290); --color-block: oklch(70% 0.17 25); --color-warn: oklch(80% 0.15 75); --color-focus: oklch(72% 0.19 131.6);
+}
